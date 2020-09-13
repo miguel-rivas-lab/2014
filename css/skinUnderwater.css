@@ -1,0 +1,45 @@
+body {
+  background-color: #ea916a;
+}
+
+#box_tree_02 {
+  position: fixed;
+  z-index: -7;
+  right: 100px;
+  bottom: 50px;
+  display: block;
+  width: 450px;
+  height: 370px;
+  -webkit-transform: bottom;
+      -ms-transform: bottom;
+          transform: bottom;
+  -webkit-animation: mud ease-in-out 3s infinite alternate;
+          animation: mud ease-in-out 3s infinite alternate;
+  background-image: url("../img/bk_b4_city.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@-webkit-keyframes mud
+{
+  from
+{
+    bottom: 60px;
+  }
+  to
+{
+    bottom: 80px;
+  }
+}
+
+@keyframes mud
+{
+  from
+{
+    bottom: 60px;
+  }
+  to
+{
+    bottom: 80px;
+  }
+}

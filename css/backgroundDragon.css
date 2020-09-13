@@ -1,0 +1,19 @@
+body {
+  background-color: #27A9E1;
+}
+
+#box_dragon_02 {
+  position: fixed;
+  z-index: -10;
+  right: -600px;
+  bottom: -675px;
+  display: block;
+  width: 1350px;
+  height: 1350px;
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-animation: rtl linear 20s infinite;
+          animation: rtl linear 20s infinite;
+  background: url("img/bk_b4_dragon_02.png") center center no-repeat;
+}
