@@ -69,22 +69,6 @@ ul
 	font: 17pt $f_title;
 }
 
-.btn
-{
-	font: 9pt $f_body;
-	color: #fff;
-	background-color: #FF002F;
-	padding: 6px 20px;
-	transition: 500ms;
-	display: inline-block;
-
-	&:hover
-	{
-		background-color: $chartreuse;
-		color: #000;
-	}
-}
-
 .fix
 {
 	width: 960px;
