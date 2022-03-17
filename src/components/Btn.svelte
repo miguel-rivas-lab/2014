@@ -23,7 +23,7 @@
     use:link
     class={computedClasses}
     title={computedLabel}
-    aria-label="{computedLabel},"
+    aria-label="{computedLabel}"
     href={to}
   >
     <Icon {glyph} {direction} />

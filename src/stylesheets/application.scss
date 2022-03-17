@@ -17,18 +17,23 @@
 
 // @import 'general/mixings';
 // @import 'general/keyframes';
-@import 'general/icomoon';
+@import "general/icomoon";
 
 // @import 'desktop/loading';
 // @import 'desktop/main';
 // @import 'desktop/general';
-// @import 'desktop/navbar';
-// @import 'desktop/home';
+@import "desktop/home";
 // @import 'desktop/portfolio';
 // @import 'desktop/contacts';
 
-/*----------------------------*/
+@import "skins/clock";
+@import "skins/dragon-night";
+@import "skins/dragon";
+@import "skins/night";
+@import "skins/sunset";
+@import "skins/underwater";
 
+/*----------------------------*/
 
 * {
   box-sizing: border-box;
@@ -241,13 +246,20 @@ main {
   .workarea {
     transition: all 200ms ease;
     background-color: var(--color-workarea-background);
+    overflow: hidden;
+    position: relative;
+
+    > section {
+      position: relative;
+      z-index: 2;
+    }
   }
 }
 
 /* ------------------------- */
 
 main.svelte-theme {
-  --hue-1: 155deg;
+  --hue-1: 20deg;
   --hue-2: 50deg;
 
   --color-2: hsl(var(--hue-1) 50% 50%);
@@ -299,4 +311,77 @@ main.svelte-theme {
       margin: auto;
     }
   }
+}
+
+/* -------------------------- */
+
+h1 {
+  font-weight: 600;
+  font-size: 25px;
+  color: var(--color-title);
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+p,
+li {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.table {
+  text-transform: uppercase;
+
+  h2 {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+  h3 {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+  h4 {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  time {
+    font-weight: 300;
+    letter-spacing: 3px;
+  }
+}
+
+/* ------- random*/
+
+.bk-ornament,
+.bk-ornament-2 {
+  position: absolute;
+  display: block;
+}
+
+.bk-ornament {
+  z-index: 0;
+}
+
+.bk-ornament-2 {
+  z-index: 1;
 }

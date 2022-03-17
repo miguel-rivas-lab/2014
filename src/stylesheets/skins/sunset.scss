@@ -1,0 +1,26 @@
+main.sunset {
+	.workarea
+	{
+		background-color: #4A5484;
+	}
+	
+	.bk-ornament
+	{
+		bottom: 70px;
+		left: 23%;
+		width: 120px;
+		height: 120px;
+		background: url('../imgs/sprites-01.png') no-repeat;
+		background-position: -221px -30px;
+	}
+	
+	.bk-ornament-2
+	{
+		right: 20%;
+		bottom: 120px;
+		width: 200px;
+		height: 160px;
+		background: url('../imgs/sprites-01.png') no-repeat;
+		background-position: -5px -2px;
+	}
+}

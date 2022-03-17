@@ -9,12 +9,12 @@
     grid = false,
     className = "";
 
-  let computedSpacing = spacing ? validateSpacing(spacing) : "";
-  let computedGroup = group ? "nano-group" : "";
-  let computedIntegrated = integrated ? "integrated" : "";
-  let computedVertical = vertical ? "vertical" : "";
-  let computedGrid = grid ? "grid" : "";
-  let computedClasses = [
+  $: computedSpacing = spacing ? validateSpacing(spacing) : "";
+  $: computedGroup = group ? "nano-group" : "";
+  $: computedIntegrated = integrated ? "integrated" : "";
+  $: computedVertical = vertical ? "vertical" : "";
+  $: computedGrid = grid ? "grid" : "";
+  $: computedClasses = [
     "nano-row",
     computedGroup,
     computedIntegrated,
@@ -24,18 +24,8 @@
     className,
   ]
     .join(" ")
-    .replace(/\s+/g, ' ')
+    .replace(/\s+/g, " ")
     .trim();
-
-    console.log([
-    "nano-row",
-    computedGroup,
-    computedIntegrated,
-    computedVertical,
-    computedGrid,
-    computedSpacing,
-    className,
-  ]);
 </script>
 
 <template>

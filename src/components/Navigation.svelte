@@ -2,8 +2,15 @@
   import Row from "../components/Row.svelte";
   import Column from "../components/Column.svelte";
   import Btn from "../components/Btn.svelte";
+  import {location} from 'svelte-spa-router'
 
-  const navigation = [{ icon: "aguacatekun", route: ["/home"], tooltip: "Home" }];
+  const navigation = [
+    { icon: "avo", route: ["/home"], tooltip: "Home" },
+    { icon: "duck", route: ["/projects"], tooltip: "Projects" },
+    { icon: "paper-plane", route: ["/contact"], tooltip: "Contact Me" },
+  ];
+
+  $: currentLocation = $location;
 </script>
 
 <template>
@@ -17,9 +24,10 @@
                 glyph={nav.icon}
                 size="md"
                 mode="transparent"
-                color="persian-red"
+                color="burn-orange"
                 direction="top"
                 to={nav.route[0]}
+                active={currentLocation === nav.route[0]}
                 title={`${nav.tooltip} button`}
               />
             {/each}

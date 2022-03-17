@@ -1,0 +1,17 @@
+main.dragon {
+	.workarea
+	{
+		background-color: #27A9E1;
+	}
+	
+	.bk-ornament
+	{
+		right: -600px;
+		bottom: -675px;
+		width: 1350px;
+		height: 1350px;
+		transform: rotate(360deg);
+		animation: rtl linear 20s infinite;
+		background: url('../imgs/bk_b4_dragon_02.png') center center no-repeat;
+	}
+}
