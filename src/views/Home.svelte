@@ -1,4 +1,6 @@
 <script>
+	import Gear from "../components/Gear.svelte";
+
 	const contentDB = [
 		// {
 		// 	header: `Hi! My name is Miguel Rivas, <small>I'm a Frontend Developer living in Austin, TX.</small>`,
@@ -17,14 +19,56 @@
 <template>
 	<section class="home">
 		<div class="monitor">
-			{#each contentDB as screen}
-				<div class="container">
+			<div class="container">
+				{#each contentDB as screen}
 					<h1>{@html screen.header}</h1>
 					{#if screen.content}
 						<p>{@html screen.content}</p>
 					{/if}
+				{/each}
+
+				<div class="gears">
+					<Gear
+						sidePerforationRadius="5"
+						sidePerforationDistance="32"
+						sidePerforationAmount="7"
+						width="180"
+						className="rtr g1"
+					/>
+					<Gear
+						axisRadius="10"
+						sidePerforationRadius="8"
+						sidePerforationAmount="3"
+						width="160"
+						className="rtr g2"
+					/>
+					<Gear
+						teethAmount="25"
+						axisRadius="15"
+						sidePerforationRadius="8"
+						sidePerforationAmount="0"
+						width="52"
+						className="rtl g3"
+					/>
+					<Gear width="100" className="rtl g4" />
+					<Gear
+						teethAmount="30"
+						axisRadius="8"
+						sidePerforationRadius="3"
+						sidePerforationDistance="35"
+						sidePerforationAmount="10"
+						width="180"
+						className="rtr g5"
+					/>
+					<Gear
+						axisRadius="3"
+						sidePerforationRadius="8"
+						sidePerforationAmount="5"
+						width="125"
+						className="rtl g6"
+					/>
 				</div>
-			{/each}
+			</div>
 		</div>
 	</section>
 </template>

@@ -75,26 +75,6 @@ ul
 	margin: auto;
 }
 
-.rtl,
-.rtr
-{
-	-webkit-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
-}
-
-.rtl
-{
-	-webkit-animation: rtl linear 9s infinite;
-			animation: rtl linear 9s infinite;
-}
-
-.rtr
-{
-	-webkit-animation: rtr linear 9s infinite;
-			animation: rtr linear 9s infinite;
-}
-
 @keyframes sky
 {
 	from

@@ -34,7 +34,7 @@
 </script>
 
 <template>
-	<main class="svelte-theme nano-light {skin}">
+	<main class="svelte-theme {skin}">
 		<Row className="nano-app">
 			<Navigation />
 			<Column size="100%-50" className="workarea">

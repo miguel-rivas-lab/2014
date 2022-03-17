@@ -1,7 +1,7 @@
 // ------------------ Fonts
-@import "~@fontsource/montserrat/latin-300.css";
-@import "~@fontsource/montserrat/latin-400.css";
-@import "~@fontsource/montserrat/latin-600.css";
+@import "../node_modules/@fontsource/montserrat/latin-300.css";
+@import "../node_modules/@fontsource/montserrat/latin-400.css";
+@import "../node_modules/@fontsource/montserrat/latin-600.css";
 
 // ------------------ Modules
 @import "nano-grid/scss/nano-grid";
@@ -16,7 +16,7 @@
 // $f_body: $f_montserrat;
 
 // @import 'general/mixings';
-// @import 'general/keyframes';
+@import 'general/keyframes';
 @import "general/icomoon";
 
 // @import 'desktop/loading';
@@ -49,44 +49,23 @@ body {
 }
 
 main {
-  &.nano-light {
-    --color-title: #9c330a;
-    --color-background: #ffffff;
-    --color-foreground: #202028;
-    --color-workarea-background: #f8f7fb;
-    --color-panel-details-background: #ffffff;
-    --color-panel-background: #272b42;
-    --color-panel-border-separator: #cccccc;
-    --color-border: #e2e2e2;
-    --color-palette: #f7f7f7;
-    --color-label: #104e86;
-    --color-legend: #9c330a;
-    --color-background-input: #dadada;
-    --color-background-input2: #d7d7d7;
-    --color-table-background: hsl(240deg 20% 80% / 0.2);
-    --color-table-background-2: hsl(240deg 20% 85% / 0.2);
-    --color-table-background-hover: hsl(240deg 35% 90% / 0.2);
-    --map-background: #c88396;
-  }
-  &.nano-dark {
-    --color-title: #e69b28;
-    --color-background: #222;
-    --color-foreground: #eee;
-    --color-workarea-background: #202028;
-    --color-panel-details-background: #1d1d26;
-    --color-panel-background: #232327;
-    --color-panel-border-separator: #19191d;
-    --color-border: #444444;
-    --color-palette: #272727;
-    --color-label: #4ca1ef;
-    --color-legend: #b9b90e;
-    --color-background-input: #272731;
-    --color-background-input2: #232323;
-    --color-table-background: hsl(240deg 5% 25% / 0.2);
-    --color-table-background-2: hsl(240deg 5% 30% / 0.2);
-    --color-table-background-hover: hsl(240deg 20% 35% / 0.2);
-    --map-background: #4c2faf;
-  }
+  --color-title: #9c330a;
+  --color-background: #ffffff;
+  --color-foreground: #202028;
+  --color-workarea-background: #f8f7fb;
+  --color-panel-details-background: #ffffff;
+  --color-panel-background: #272b42;
+  --color-panel-border-separator: #cccccc;
+  --color-border: #444444;
+  --color-palette: #f7f7f7;
+  --color-label: #104e86;
+  --color-legend: #9c330a;
+  --color-background-input: #dadada;
+  --color-background-input2: #d7d7d7;
+  --color-table-background: hsl(240deg 20% 80% / 0.2);
+  --color-table-background-2: hsl(240deg 20% 85% / 0.2);
+  --color-table-background-hover: hsl(240deg 35% 90% / 0.2);
+  --map-background: #c88396;
   --title-shadow: 0;
   --color-shadow: rgb(0 0 0 / 65%);
   --shadow-depth: 2px 2px 5px;
@@ -384,4 +363,9 @@ li {
 
 .bk-ornament-2 {
   z-index: 1;
+}
+
+hr {
+  border-color: var(--color-border);
+  border-width: 0 0 1px 0;
 }

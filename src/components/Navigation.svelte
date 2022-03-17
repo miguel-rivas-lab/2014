@@ -2,13 +2,26 @@
   import Row from "../components/Row.svelte";
   import Column from "../components/Column.svelte";
   import Btn from "../components/Btn.svelte";
-  import {location} from 'svelte-spa-router'
+  import { location } from "svelte-spa-router";
 
   const navigation = [
     { icon: "avo", route: ["/home"], tooltip: "Home" },
     { icon: "duck", route: ["/projects"], tooltip: "Projects" },
     { icon: "paper-plane", route: ["/contact"], tooltip: "Contact Me" },
   ];
+
+  const skins = [
+    { icon: "leaf", evento: "clock", tooltip: "Tree Clock" },
+    { icon: "teapot", evento: "underwater", tooltip: "Underwater" },
+    { icon: "fire", evento: "dragon", tooltip: "Dragon" },
+    { icon: "fire", evenot: "dragon-ight", tooltip: "Dragon Night" },
+    { icon: "moon", evento: "night", tooltip: "Night" },
+    { icon: "brightness", evento: "sunset", tooltip: "Sunset" },
+  ];
+
+  function setSkin(skin) {
+    console.log(skin);
+  }
 
   $: currentLocation = $location;
 </script>
@@ -29,6 +42,19 @@
                 to={nav.route[0]}
                 active={currentLocation === nav.route[0]}
                 title={`${nav.tooltip} button`}
+              />
+            {/each}
+            <hr />
+            {#each skins as skin}
+              <Btn
+                glyph={skin.icon}
+                size="md"
+                on:click={() => setSkin(skin.evento)}
+                mode="transparent"
+                color="burn-orange"
+                direction="top"
+                active={false}
+                title={`${skin.tooltip} button`}
               />
             {/each}
           </Column>
