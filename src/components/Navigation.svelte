@@ -3,7 +3,8 @@
   import Column from "../components/Column.svelte";
   import Btn from "../components/Btn.svelte";
   import { location } from "svelte-spa-router";
-
+  import Store from "../modules/Store";
+ 
   const navigation = [
     { icon: "avo", route: ["/home"], tooltip: "Home" },
     { icon: "duck", route: ["/projects"], tooltip: "Projects" },
@@ -14,13 +15,13 @@
     { icon: "leaf", evento: "clock", tooltip: "Tree Clock" },
     { icon: "teapot", evento: "underwater", tooltip: "Underwater" },
     { icon: "fire", evento: "dragon", tooltip: "Dragon" },
-    { icon: "fire", evenot: "dragon-ight", tooltip: "Dragon Night" },
-    { icon: "moon", evento: "night", tooltip: "Night" },
     { icon: "brightness", evento: "sunset", tooltip: "Sunset" },
+    { icon: "fire", evento: "dragon-night", tooltip: "Dragon Night" },
+    { icon: "moon", evento: "night", tooltip: "Night" },
   ];
 
   function setSkin(skin) {
-    console.log(skin);
+    $Store.theme = skin;
   }
 
   $: currentLocation = $location;
@@ -51,9 +52,9 @@
                 size="md"
                 on:click={() => setSkin(skin.evento)}
                 mode="transparent"
-                color="burn-orange"
+                color="gold-tips"
                 direction="top"
-                active={false}
+                active={$Store.theme === skin.evento}
                 title={`${skin.tooltip} button`}
               />
             {/each}

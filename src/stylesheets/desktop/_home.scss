@@ -33,6 +33,12 @@ section.home {
 				margin-bottom: 0;
 			}
 		}
+
+		&:hover {
+			.screen-container {
+				transform: rotate(180deg);
+			}
+		}
 	}
 
 	.gear {
@@ -64,19 +70,43 @@ section.home {
 		}
 
 		&.g6 {
-			left: 272px;
-			top: 68px;
+			left: 259px;
+			top: 80px;
 		}
 	}
 
-	.screen
-	{
+	.screen-container {
 		position: absolute;
-		width: 550px;
-		height: 500px;
-		background-image: url('../imgs/e002.png');
-		background-repeat: no-repeat;
-		background-position: left bottom;
+		z-index: -2;
+		right: 19px;
+		bottom: 15px;
+		transform: rotate(90deg);
+		transform-origin: 55px 16px;
+		transition: 500ms;
+		
+		.screen {
+			position: absolute;
+			width: 185px;
+			height: 130px;
+			border: 11px solid #222;
+			background-color: #333;
+			z-index: 0;
+			right: 100%;
+			top: -20%;
+		}
+
+		.bone {
+			width: 60px;
+			height: 30px;
+			background-color: #000000;
+		}
+
+		.gear {
+			z-index: 0;
+			position: absolute;
+			right: -20px;
+			top: -10px;
+		}
 	}
 }
 
@@ -185,5 +215,3 @@ section.home {
 // 		background-position: -113px -3px;
 // 	}
 // }
-
-

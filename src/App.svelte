@@ -6,6 +6,7 @@
 	import Navigation from "./components/Navigation.svelte";
 	import Row from "./components/Row.svelte";
 	import Column from "./components/Column.svelte";
+	import Store from "./modules/Store";
 
 	let routes = {
 		"/home": Home,
@@ -19,27 +20,31 @@
 		hour12: false,
 	});
 
-	let skin = "night";
 	if (currentHour >= 0 && currentHour <= 4) {
-		skin = "dragon";
+		$Store.theme = "dragon";
 	} else if (currentHour >= 5 && currentHour <= 11) {
-		skin = "clock";
+		$Store.theme = "clock";
 	} else if (currentHour >= 12 && currentHour <= 14) {
-		skin = "underwater";
+		$Store.theme = "underwater";
 	} else if (currentHour >= 15 && currentHour <= 17) {
-		skin = "sunset";
+		$Store.theme = "sunset";
 	} else if (currentHour >= 18 && currentHour <= 20) {
-		skin = "dragon-night";
+		$Store.theme = "dragon-night";
 	}
 </script>
 
 <template>
-	<main class="svelte-theme {skin}">
+	<main class="svelte-theme {$Store.theme}">
 		<Row className="nano-app">
 			<Navigation />
 			<Column size="100%-50" className="workarea">
 				<Router {routes} />
-				<div class="bk-ornament"/>
+				<div class="bk-ornament" />
+				<div class="bk-ornament-2" />
+				<footer>
+					<div class="clouds" />
+					<div class="city" />
+				</footer>
 			</Column>
 		</Row>
 	</main>

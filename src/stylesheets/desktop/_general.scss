@@ -27,30 +27,3 @@ section
 	@include position(x, x, 45px, 18px);
 }
 
-#box_city
-{
-	position: fixed;
-	z-index: -6;
-	@include size(100%, x, 220px, x);
-	@include position(x, x, 0, 0);
-
-	-webkit-transition: 1000ms;
-			transition: 1000ms;
-
-	background: url('../img/bk_b4.png') center bottom repeat-x;
-}
-
-#box_sky1
-{
-	position: fixed;
-	z-index: -6;
-	@include size(100%, x, 220px, x);
-	@include position(x, x, 0, 0);
-
-	-webkit-animation: sky linear 50s infinite;
-			animation: sky linear 50s infinite;
-
-	background-image: url('../img/p01.png');
-	background-repeat: repeat-x;
-	background-position: 0 0;
-}

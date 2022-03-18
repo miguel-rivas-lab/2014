@@ -1,6 +1,7 @@
 <script>
   import Icon from "./Icon.svelte";
   import { link } from "svelte-spa-router";
+  import { beforeUpdate } from "svelte";
 
   export let glyph = "",
     size = "",
@@ -12,12 +13,17 @@
     color = "transparent",
     active = false;
 
-  let isActive = active ? "active" : "";
-  let btnType = `btn ${mode}`;
-  let computedLabel = text !== "" ? text : title;
-  let computedClasses = [btnType, color, size, isActive].join(" ")
-    .replace(/\s+/g, " ")
-    .trim();
+  let computedClasses, computedLabel;
+
+  beforeUpdate(() => {
+    let isActive = active ? "active" : "";
+    let btnType = `btn ${mode}`;
+
+    computedClasses = [btnType, color, size, isActive]
+      .join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
+  });
 </script>
 
 <template>
