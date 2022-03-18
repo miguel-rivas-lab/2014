@@ -1,5 +1,5 @@
 <script>
-	import Gear from "../components/Gear.svelte";
+	import Gear from "nano-grid-svelte/components/Gear.svelte";
 
 	const contentDB = [
 		// {

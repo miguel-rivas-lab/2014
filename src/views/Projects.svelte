@@ -1,10 +1,11 @@
 <script>
+	import ScrollArea from "nano-grid-svelte/components/ScrollArea.svelte";
 </script>
 
 <template>
 	<section class="projects">
-		<div class="container">
-      Projects
-		</div>
+		<ScrollArea color="burn-orange">
+			<div class="container">Projects</div>
+		</ScrollArea>
 	</section>
 </template>

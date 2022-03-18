@@ -1,7 +1,7 @@
 <script>
-  import Row from "../components/Row.svelte";
-  import Column from "../components/Column.svelte";
-  import Btn from "../components/Btn.svelte";
+  import Row from "nano-grid-svelte/components/Row.svelte";
+  import Column from "nano-grid-svelte/components/Column.svelte";
+  import Btn from "nano-grid-svelte/components/Btn.svelte";
   import { location } from "svelte-spa-router";
   import Store from "../modules/Store";
  

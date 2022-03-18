@@ -4,8 +4,8 @@
 	import Projects from "./views/Projects.svelte";
 	import Contact from "./views/Contact.svelte";
 	import Navigation from "./components/Navigation.svelte";
-	import Row from "./components/Row.svelte";
-	import Column from "./components/Column.svelte";
+	import Row from "nano-grid-svelte/components/Row.svelte";
+	import Column from "nano-grid-svelte/components/Column.svelte";
 	import Store from "./modules/Store";
 
 	let routes = {
