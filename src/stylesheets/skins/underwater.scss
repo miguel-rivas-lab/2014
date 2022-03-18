@@ -1,31 +1,30 @@
 main.underwater {
-	.workarea
-	{
+	.workarea {
 		background-color: #ea916a;
 	}
-	
-	.bk-ornament
-	{
+
+	.bk-ornament {
 		right: 100px;
 		bottom: 50px;
 		width: 450px;
 		height: 370px;
 		transform: bottom;
 		animation: mud ease-in-out 3s infinite alternate;
-		background-image: url('../imgs/bk_b4_city.png') ;
+		background-image: url("../imgs/bk_b4_city.png");
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
-}
 
+	.bird {
+		background-image: url("../imgs/sprites-06.png") !important;
+	}
 
-@keyframes mud
-{
-	from
-	{
-		bottom: 60px;
-	}to
-	{
-		bottom: 80px;
+	@keyframes mud {
+		from {
+			bottom: 60px;
+		}
+		to {
+			bottom: 80px;
+		}
 	}
 }

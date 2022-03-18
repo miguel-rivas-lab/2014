@@ -94,9 +94,9 @@
         starRadius="40"
         innerRadius="20"
       />
-      <div class="bird b01" />
-      <div class="bird b02" />
-      <div class="bird b03" />
     </div>
+    <div class="bird b1" style={`transform: translate(${mX * -0.005}px, ${mY * -0.007}px)`} />
+    <div class="bird b2" style={`transform: translate(${mY * -0.003}px, ${mX * 0.002}px)`} />
+    <div class="bird b3" style={`transform: translate(${mX * 0.009}px, ${mY * -0.008}px)`} />
   </section>
 </template>

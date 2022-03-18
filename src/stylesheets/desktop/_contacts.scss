@@ -49,4 +49,35 @@ section.contact {
 			transform: rotateY(180deg);
 		}
 	}
+
+	.bird {
+		position: absolute;
+		z-index: -2;
+
+		background-repeat: no-repeat;
+		&.b1 {
+			@include size(125px, x, 103px, x);
+			@include position(150px, x, x, 10%);
+			background-image: url("../imgs/sprites-04.png");
+			background-position: -4px -144px;
+		}
+
+		&.b2 {
+			@include size(60px, x, 50px, x);
+			@include position(500px, 10%, x, x);
+			background-image: url("../imgs/sprites-04.png");
+			background-position: -4px -255px;
+
+			@media screen and (max-height: 700px) {
+				display: none;
+			}
+		}
+
+		&.b3 {
+			@include size(140px, x, 140px, x);
+			@include position(150px, 12%, x, x);
+			background-image: url("../imgs/sprites-04.png");
+			background-position: -4px -1px;
+		}
+	}
 }
