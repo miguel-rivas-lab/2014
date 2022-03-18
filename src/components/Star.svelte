@@ -1,6 +1,5 @@
 <script>
-	import { onMount } from "svelte";
-	import { beforeUpdate } from "svelte";
+	import { onMount, beforeUpdate } from "svelte";
 
 	export let className = "",
 		translation = "200",

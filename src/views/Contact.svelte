@@ -2,7 +2,8 @@
   import Star from "../components/Star.svelte";
   import Btn from "../components/Btn.svelte";
 
-  let mX, mY;
+  let mX = 1,
+    mY = 1;
   function moveObjects(event) {
     mX = parseInt(event.clientX) || 1;
     mY = parseInt(event.clientY) || 1;
