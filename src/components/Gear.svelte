@@ -37,60 +37,60 @@
     /* ----------- End Vars ----------- */
 
     ctx.clearRect(0, 0, width, width);
-    for (let kk = 0; kk <= teethAmount - 1; kk++) {
-      px[kk] =
-        Math.cos((360 / teethAmount) * kk * ang) *
-        pitchRadius *
-        percent;
-      py[kk] =
-        Math.sin((360 / teethAmount) * kk * -ang) *
-        pitchRadius *
-        percent;
+    for (let counter = 0; counter <= teethAmount - 1; counter++) {
+      px[counter] =
+        Math.cos((360 / teethAmount) * counter * ang) * pitchRadius * percent;
+      py[counter] =
+        Math.sin((360 / teethAmount) * counter * -ang) * pitchRadius * percent;
     }
     /* --------------------- Second Shape --------------------- */
-    for (let kk = 0; kk <= teethAmount - 1; kk++) {
-      px2[kk] =
-        Math.cos((360 / (teethAmount * 2) + (360 / teethAmount) * kk) * ang) *
+    for (let counter = 0; counter <= teethAmount - 1; counter++) {
+      px2[counter] =
+        Math.cos(
+          (360 / (teethAmount * 2) + (360 / teethAmount) * counter) * ang
+        ) *
         baseCircleRadius *
         percent;
-      py2[kk] =
+      py2[counter] =
         Math.sin(
-          (360 / (teethAmount * 2) + (360 / teethAmount) * kk) * -ang
+          (360 / (teethAmount * 2) + (360 / teethAmount) * counter) * -ang
         ) *
         baseCircleRadius *
         percent;
     }
     /* --------------------- Circles --------------------- */
-    for (let kk = 0; kk <= sidePerforationAmount - 1; kk++) {
-      px3[kk] =
-        Math.cos((360 / sidePerforationAmount) * kk * ang) *
+    for (let counter = 0; counter <= sidePerforationAmount - 1; counter++) {
+      px3[counter] =
+        Math.cos((360 / sidePerforationAmount) * counter * ang) *
         sidePerforationDistance *
         percent;
-      py3[kk] =
-        Math.sin((360 / sidePerforationAmount) * kk * -ang) *
+      py3[counter] =
+        Math.sin((360 / sidePerforationAmount) * counter * -ang) *
         sidePerforationDistance *
         percent;
     }
     ctx.beginPath();
     ctx.moveTo(x + px[0], y + py[0]);
     ctx.lineTo(x + px2[0], y + py2[0]);
-    for (let kk = 1; kk <= teethAmount - 1; kk++) {
-      ctx.lineTo(x + px[kk], y + py[kk]);
-      ctx.lineTo(x + px2[kk], y + py2[kk]);
+    for (let counter = 1; counter <= teethAmount - 1; counter++) {
+      ctx.lineTo(x + px[counter], y + py[counter]);
+      ctx.lineTo(x + px2[counter], y + py2[counter]);
     }
     ctx.fillStyle = gear_color;
     ctx.fill();
+    ctx.strokeStyle = "rgba(100,100,100,1)";
+    ctx.stroke();
     ctx.closePath();
     ctx.beginPath();
     ctx.arc(x, y, axisRadius * percent, 0, Math.PI * 2, true);
     ctx.fillStyle = holes_color;
     ctx.fill();
     ctx.closePath();
-    for (let kk = 0; kk <= sidePerforationAmount - 1; kk++) {
+    for (let counter = 0; counter <= sidePerforationAmount - 1; counter++) {
       ctx.beginPath();
       ctx.arc(
-        x + px3[kk],
-        y + py3[kk],
+        x + px3[counter],
+        y + py3[counter],
         sidePerforationRadius * percent,
         0,
         Math.PI * 2,
