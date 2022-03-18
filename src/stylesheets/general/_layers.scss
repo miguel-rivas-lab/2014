@@ -1,0 +1,15 @@
+$layers: (
+  //----Bottom
+  '.bk-ornament',
+  '.bk-ornament-2 ',
+  '.workarea > section'
+  //----Front
+);
+
+$index: -1;
+@each $layer in $layers {
+  $index: $index + 1;
+  #{$layer} {
+    z-index: $index;
+  }
+}

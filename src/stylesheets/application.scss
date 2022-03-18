@@ -1,7 +1,7 @@
 // ------------------ Fonts
-@import "../node_modules/@fontsource/montserrat/latin-300.css";
-@import "../node_modules/@fontsource/montserrat/latin-400.css";
-@import "../node_modules/@fontsource/montserrat/latin-600.css";
+// @import "../node_modules/@fontsource/montserrat/latin-300.css";
+// @import "../node_modules/@fontsource/montserrat/latin-400.css";
+// @import "../node_modules/@fontsource/montserrat/latin-600.css";
 
 // ------------------ Modules
 @import "nano-grid/scss/nano-grid";
@@ -18,13 +18,14 @@
 // @import 'general/mixings';
 @import 'general/keyframes';
 @import "general/icomoon";
+@import "general/layers";
 
 // @import 'desktop/loading';
 // @import 'desktop/main';
 // @import 'desktop/general';
 @import "desktop/home";
 // @import 'desktop/portfolio';
-// @import 'desktop/contacts';
+@import 'desktop/contacts';
 
 @import "skins/clock";
 @import "skins/dragon-night";
@@ -230,7 +231,6 @@ main {
 
     > section {
       position: relative;
-      z-index: 2;
     }
   }
 }
@@ -379,14 +379,6 @@ footer {
 .bk-ornament-2 {
   position: absolute;
   display: block;
-}
-
-.bk-ornament {
-  z-index: 0;
-}
-
-.bk-ornament-2 {
-  z-index: 1;
 }
 
 hr {

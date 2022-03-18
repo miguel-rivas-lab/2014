@@ -1,32 +1,98 @@
 <script>
-  import Gear from "../components/Gear.svelte";
+  import Star from "../components/Star.svelte";
+  import Btn from "../components/Btn.svelte";
+
+  let mX, mY;
+  function moveObjects(event) {
+    mX = parseInt(event.clientX) || 1;
+    mY = parseInt(event.clientY) || 1;
+  }
 </script>
+
+<svelte:window on:mousemove={moveObjects} on:load={moveObjects} />
 
 <template>
   <section class="contact">
-    <div class="container">
-
-      <div class="form-container">
-        <img src="./imgs/form-header.png" alt="" class="form-header">
-      </div>
+    <div class="form-container">
+      <img src="./imgs/form-header.png" alt="" class="form-header" />
       <form>
-        <input type="text" name="name" />
-        <input type="text" name="email" />
-        <textarea name="topic" cols="30" rows="10" />
+        <input type="text" name="name" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <textarea name="topic" cols="30" rows="10" placeholder="Message" />
+        <Btn color="emerald" text="Send" mode="flat" />
       </form>
 
-      <Gear size="450, 500" />
-      <Gear size="450, 500" />
+      <Star
+        x={-mX * 0.008}
+        y={mX * 0.005}
+        className="st4 left"
+        translation="500, 180"
+      />
+      <Star
+        x={mX * 0.008}
+        y={mX * 0.005}
+        className="st4 right"
+        translation="500, 180"
+      />
 
-      <Gear size="450, 500" />
-      <Gear size="450, 500" />
+      <Star
+        x={-mX * 0.004}
+        y={-mY * 0.006}
+        className="st3 left"
+        translation="350, 350"
+      />
+      <Star
+        x={mX * 0.004}
+        y={-mY * 0.006}
+        className="st3 right"
+        translation="350, 350"
+      />
 
-      <Gear size="450, 500" />
-      <Gear size="450, 500" />
+      <Star
+        x={-mY * 0.005}
+        y={mX * 0.002}
+        className="st2 left"
+        translation="470, 300"
+      />
+      <Star
+        x={mY * 0.005}
+        y={mX * 0.002}
+        className="st2 right"
+        translation="470, 300"
+      />
 
-      <Gear size="600, 500" />
-      <Gear size="600, 500" />
-
+      <Star
+        x={-mX * 0.006}
+        y={mY * 0.005}
+        className="st5 left"
+        translation="400, 30"
+        starRadius="70"
+        innerRadius="35"
+      />
+      <Star
+        x={mX * 0.006}
+        y={mY * 0.005}
+        className="st5 right"
+        translation="400, 30"
+        starRadius="70"
+        innerRadius="35"
+      />
+      <Star
+        x={-mY * 0.002}
+        y={mX * 0.003}
+        className="st1 left"
+        translation="350, 200"
+        starRadius="40"
+        innerRadius="20"
+      />
+      <Star
+        x={mY * 0.002}
+        y={mX * 0.003}
+        className="st1 right"
+        translation="350, 200"
+        starRadius="40"
+        innerRadius="20"
+      />
       <div class="bird b01" />
       <div class="bird b02" />
       <div class="bird b03" />
