@@ -1,15 +1,29 @@
 <script>
 	import Gear from "nano-grid-svelte/components/Gear.svelte";
 	import Container from "nano-grid-svelte/components/Container.svelte";
+	import Icon from "nano-grid-svelte/components/Icon.svelte";
+
+	let contentIndex = 0;
+
+	let movePage = (movement) => {
+		if (contentIndex + movement > contentDB.length - 1) {
+			contentIndex = 0;
+		} else if (contentIndex + movement < 0) {
+			contentIndex = contentDB.length - 1;
+		} else {
+			contentIndex += movement;
+		}
+	};
 
 	const contentDB = [
-		// {
-		// 	header: `Hi! My name is Miguel Rivas, <small>I'm a Frontend Developer living in Austin, TX.</small>`,
-		// },
-		// {
-		// 	header: `Why Me?`,
-		// 	content: `I work with HTML/JADE/HAML, CSS/SASS/LESS, and the Adobe Suite (Illustrator, Photoshop, Indesign, Flash and Premiere). I also love git and have been known to roll up my sleeves and work with basic Ruby on Rails and PHP.`,
-		// },
+		{
+			header: `Hi! My name is Miguel Rivas`,
+			content: `I'm a Frontend Developer living in Austin, TX.`,
+		},
+		{
+			header: `Why Me?`,
+			content: `I work with HTML/JADE/HAML, CSS/SASS/LESS, and the Adobe Suite (Illustrator, Photoshop, Indesign, Flash and Premiere). I also love git and have been known to roll up my sleeves and work with basic Ruby on Rails and PHP.`,
+		},
 		{
 			header: `Experience in the area`,
 			content: `I've work as Front-End Developer for <strong>Cerveza Presidente</strong> in the web app <strong>Destapa El Coro</strong> and in the page of <strong>Carnaval Presidente 2015</strong>. also I worked with other brand as Orange, Pepsi and Outback.`,
@@ -21,12 +35,27 @@
 	<section class="home">
 		<div class="monitor">
 			<Container>
-				{#each contentDB as screen}
-					<h1>{@html screen.header}</h1>
-					{#if screen.content}
-						<p>{@html screen.content}</p>
-					{/if}
-				{/each}
+				<h1>{@html contentDB[contentIndex].header}</h1>
+				{#if contentDB[contentIndex].content}
+					<p>{@html contentDB[contentIndex].content}</p>
+				{/if}
+
+				<button
+					class="scrn_btn prev"
+					on:click={() => {
+						movePage(-1);
+					}}
+				>
+					<Icon direction="left" glyph="chevron" />
+				</button>
+				<button
+					class="scrn_btn next"
+					on:click={() => {
+						movePage(1);
+					}}
+				>
+					<Icon direction="right" glyph="chevron" />
+				</button>
 
 				<Gear
 					sidePerforationRadius="5"
