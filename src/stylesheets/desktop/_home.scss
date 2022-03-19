@@ -139,11 +139,11 @@ section.home {
 		border: solid #222;
 		color: #333;
 		font-size: 32px;
-		background-color: #9d9d9d;
-		
+		background-color: rgb(157 157 157 / 40%);
+
 		&:hover {
 			cursor: pointer;
-			background-color: #c6d72e;
+			background-color: rgb(198 215 46 / 50%);
 		}
 
 		&:before {
