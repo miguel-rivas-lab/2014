@@ -2,88 +2,42 @@
 	import ScrollArea from "nano-grid-svelte/components/ScrollArea.svelte";
 	import Row from "nano-grid-svelte/components/Row.svelte";
 	import Column from "nano-grid-svelte/components/Column.svelte";
-	import Btn from "nano-grid-svelte/components/Btn.svelte";
 	import Container from "nano-grid-svelte/components/Container.svelte";
+	import { allDBListVisible } from "../modules/format-db";
 
-	let contentDB = [
-		{
-			header: "Miguel Rivas",
-			secHeader: "Portfolio 2022",
-			date: "J31 M07 T14",
-			type: "Application",
-			img: "https://miguel-rivas.github.io/zapp/img/preview-wide/20211220_miguelrivas.jpg",
-			skills: ["html", "jQuery"],
-		},
-		{
-			header: "Miguel Rivas",
-			secHeader: "Portfolio 2022",
-			date: "J31 M07 T14",
-			type: "Application",
-			img: "https://miguel-rivas.github.io/zapp/img/preview-wide/20211220_miguelrivas.jpg",
-			skills: ["html", "jQuery"],
-		},
-		{
-			header: "Miguel Rivas",
-			secHeader: "Portfolio 2022",
-			date: "J31 M07 T14",
-			type: "Application",
-			img: "https://miguel-rivas.github.io/zapp/img/preview-wide/20211220_miguelrivas.jpg",
-			skills: ["html", "jQuery"],
-		},
-		{
-			header: "Miguel Rivas",
-			secHeader: "Portfolio 2022",
-			date: "J31 M07 T14",
-			type: "Application",
-			img: "https://miguel-rivas.github.io/zapp/img/preview-wide/20211220_miguelrivas.jpg",
-			skills: ["html", "jQuery"],
-		},
-	];
 </script>
 
 <template>
 	<section class="projects">
 		<ScrollArea color="burn-orange">
 			<Container width="1450" className="gallery">
-				{#each contentDB as entry}
+				{#each allDBListVisible as entry}
 					<article class="nano-box">
 						<Row spacing="4">
 							<Column size="3/5">
-								<img src={entry.img} alt={entry.header + " preview"} />
+								<img src={entry.image} alt={entry.header + " preview"} />
 							</Column>
 							<Column size="2/5">
 								<ScrollArea color="burn-orange">
 									<h2>
-										{@html entry.header}
+										{@html entry.clients[0]}
 									</h2>
 									<h3>
-										{@html entry.secHeader}
+										{@html entry.title}
 									</h3>
 									<h4>
-										{@html entry.type}
+										{@html entry.types}
 									</h4>
 									<h5>
 										<time>
-											{@html entry.date}
+											{@html entry.turingDate}
 										</time>
 									</h5>
-									{#if entry.skills.length > 0}
+									{#if entry.tools.length > 0}
 										<ul class="skills">
-											{#each entry.skills as li}
+											{#each entry.tools as li}
 												<li>{@html li}</li>
 											{/each}
-										</ul>
-									{/if}
-									{#if true}
-										<ul class="navigation">
-											<!-- {#each entry.skills as li} -->
-											<li>
-												<Btn text="App" color="emerald" />
-											</li>
-											<li>
-												<Btn text="Github" color="royal-purple" />
-											</li>
-											<!-- {/each} -->
 										</ul>
 									{/if}
 								</ScrollArea>

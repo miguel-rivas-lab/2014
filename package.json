@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "miguelrivas-2014",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
     "start": "sirv public --no-clear"
   },
   "devDependencies": {
-    "@fontsource/montserrat": "^4.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "nano-grid": "file:../../app_web_module_nanogrid",
@@ -25,6 +24,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "luxon": "^2.3.0",
     "sirv-cli": "^2.0.0",
     "svelte-preprocess": "^4.10.4",
     "svelte-spa-router": "^3.2.0"
