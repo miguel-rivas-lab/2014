@@ -4,14 +4,7 @@
   article {
     height: 100%;
     position: relative;
-
-    .scroll-area {
-      text-transform: uppercase;
-      @media only screen and (min-width: 992px) {
-        max-height: 551px;
-        padding: 0 0.5rem;
-      }
-    }
+    text-transform: uppercase;
 
     > .nano-row {
       @media only screen and (max-width: 992px) {
