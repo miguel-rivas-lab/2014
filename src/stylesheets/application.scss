@@ -10,22 +10,22 @@
 // @import "nano-grid/scss/tooltip";
 // @import "nano-grid/scss/range-slider";
 
-// @import 'general/library';
-
-// $f_title: $f_montserrat;
-// $f_body: $f_montserrat;
-
 @import 'general/mixings';
 @import 'general/keyframes';
 @import "general/icomoon";
 @import "general/layers";
+@import "general/fonts";
+@import "general/theme";
 
-// @import 'desktop/loading';
-// @import 'desktop/main';
-// @import 'desktop/general';
 @import "desktop/home";
-// @import 'desktop/portfolio';
+@import 'desktop/portfolio';
 @import 'desktop/contacts';
+
+@import 'components/gallery';
+@import 'components/container';
+@import 'components/nano-app';
+@import 'components/nano-box';
+@import 'components/listing';
 
 @import "skins/clock";
 @import "skins/dragon-night";
@@ -103,249 +103,6 @@ main {
 
   &.fsz {
     width: 100%;
-  }
-}
-
-/* ------------------------- */
-.nano-app {
-  height: 100vh;
-  margin-bottom: 0;
-  align-items: stretch;
-
-  &,
-  .main-panel,
-  .panel,
-  .workarea {
-    max-height: 100vh;
-  }
-
-  .panel-bar {
-    max-width: 0 !important;
-    display: flex;
-
-    button.btn {
-      box-shadow: none !important;
-      background-color: hsl(240deg 6% 14% / 68%) !important;
-      max-width: 20px;
-      min-width: 20px;
-
-      &:hover {
-        background-color: hsl(240deg 6% 14% / 80%) !important;
-      }
-    }
-  }
-
-  .main-panel {
-    position: relative;
-    background: var(--color-panel-background);
-    border-right: 1px solid #222;
-
-    .container {
-      margin: unset;
-      height: 100%;
-    }
-
-    .scroll-area {
-      height: 100%;
-    }
-
-    .suffix {
-      > .btn.flat {
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-
-  .router-area {
-    > .column {
-      height: 100vh;
-    }
-  }
-
-  .panel {
-    transition: all 200ms ease;
-    background: var(--color-panel-details-background);
-    border-right: 1px solid var(--color-panel-border-separator);
-
-    .scroll-area {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      overflow-x: hidden;
-    }
-
-    fieldset {
-      border-radius: 5px;
-      border: 1px solid var(--color-border);
-    }
-
-    .row-block {
-      opacity: 1;
-      margin: 0 1rem 1rem;
-      padding: 1rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    legend {
-      font-weight: 700;
-      padding: 0;
-      color: var(--color-legend);
-      margin-bottom: 1rem;
-      small {
-        display: block;
-      }
-    }
-
-    label,
-    .label {
-      margin: 0 0 0.5rem;
-      font-size: 11pt;
-      font-weight: 700;
-      color: var(--color-label);
-
-      &:not(.btn) {
-        display: block;
-      }
-    }
-
-    button,
-    label,
-    select,
-    input[type="text"] {
-      width: 100%;
-    }
-
-    &.hide-panel {
-      border-right: 0;
-    }
-  }
-  .workarea {
-    transition: all 200ms ease;
-    background-color: var(--color-workarea-background);
-    overflow: hidden;
-    position: relative;
-
-    > section {
-      position: relative;
-    }
-  }
-}
-
-/* ------------------------- */
-
-main.svelte-theme {
-  --hue-1: 20deg;
-  --hue-2: 50deg;
-
-  --color-2: hsl(var(--hue-1) 50% 50%);
-  --color-3: hsl(var(--hue-1) 50% 25%);
-  --color-4: hsl(var(--hue-1) 50% 10%);
-
-  --color-1: hsl(var(--hue-2) 50% 50%);
-  --color-6: hsl(var(--hue-2) 50% 25%);
-  --color-5: hsl(var(--hue-2) 50% 10%);
-
-  // --color-panel-background: hsl(0deg 0% 15%);
-  --color-panel-background: hsl(244deg 15% 16%);
-
-  &.nano-light {
-    --color-title: var(--color-3);
-    --color-legend: var(--color-3);
-    --color-label: var(--color-6);
-  }
-
-  &.nano-dark {
-    --title-shadow: 0 0 9px var(--color-2);
-    --color-title: var(--color-2);
-    --color-legend: var(--color-2);
-    --color-label: var(--color-1);
-  }
-
-  .btn.flat.active:not(.panel-ctrl) {
-    background-color: var(--color-2) !important;
-    box-shadow: 0px 3px 0 var(--color-3) !important;
-    color: var(--color-4) !important;
-  }
-
-  .pill {
-    background-color: var(--color-1) !important;
-    color: var(--color-5) !important;
-  }
-}
-
-/*------------*/
-
-.container {
-  margin: auto;
-  padding: 1rem;
-  max-width: 100%;
-  @each $size in (400, 900, 1450) {
-    &.sz#{$size} {
-      width: #{$size}px;
-      flex-basis: #{$size}px;
-      margin: auto;
-    }
-  }
-}
-
-/* -------------------------- */
-
-h1 {
-  font-weight: 600;
-  font-size: 25px;
-  color: var(--color-title);
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 18px;
-}
-
-h3 {
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-p,
-li {
-  font-size: 16px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  margin: 0 0 0.5rem;
-  line-height: 1;
-}
-
-.table {
-  text-transform: uppercase;
-
-  h2 {
-    font-size: 13px;
-    letter-spacing: 3px;
-  }
-  h3 {
-    font-size: 13px;
-    letter-spacing: 3px;
-  }
-  h4 {
-    font-size: 12px;
-    letter-spacing: 3px;
-  }
-  time {
-    font-weight: 300;
-    letter-spacing: 3px;
   }
 }
 

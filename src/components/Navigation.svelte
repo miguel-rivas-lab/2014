@@ -2,9 +2,11 @@
   import Row from "nano-grid-svelte/components/Row.svelte";
   import Column from "nano-grid-svelte/components/Column.svelte";
   import Btn from "nano-grid-svelte/components/Btn.svelte";
+  import Container from "nano-grid-svelte/components/Container.svelte";
+  import ScrollArea from "nano-grid-svelte/components/ScrollArea.svelte";
   import { location } from "svelte-spa-router";
   import Store from "../modules/Store";
- 
+
   const navigation = [
     { icon: "avo", route: ["/home"], tooltip: "Home" },
     { icon: "duck", route: ["/projects"], tooltip: "Projects" },
@@ -29,8 +31,8 @@
 
 <template>
   <Column size="50" className="main-panel">
-    <div class="scroll-area royal-purple">
-      <div class="container">
+    <ScrollArea color="burn-orange">
+      <Container>
         <Row vertical={true}>
           <Column>
             {#each navigation as nav}
@@ -60,7 +62,7 @@
             {/each}
           </Column>
         </Row>
-      </div>
-    </div>
+      </Container>
+    </ScrollArea>
   </Column>
 </template>

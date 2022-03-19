@@ -1,5 +1,6 @@
 <script>
 	import Gear from "nano-grid-svelte/components/Gear.svelte";
+	import Container from "nano-grid-svelte/components/Container.svelte";
 
 	const contentDB = [
 		// {
@@ -19,7 +20,7 @@
 <template>
 	<section class="home">
 		<div class="monitor">
-			<div class="container">
+			<Container>
 				{#each contentDB as screen}
 					<h1>{@html screen.header}</h1>
 					{#if screen.content}
@@ -66,7 +67,7 @@
 					width="165"
 					className="rtl g6"
 				/>
-			</div>
+			</Container>
 			<div class="screen-container">
 				<div class="bone">
 					<Gear

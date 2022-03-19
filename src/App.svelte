@@ -40,7 +40,6 @@
 			<Column size="100%-50" className="workarea">
 				<Router {routes} />
 				<div class="bk-ornament" />
-				<div class="bk-ornament-2" />
 				<footer>
 					<div class="clouds" />
 					<div class="city" />
