@@ -8,7 +8,7 @@
   import Store from "../modules/Store";
 
   const navigation = [
-    { icon: "avo", route: ["/home"], tooltip: "Home" },
+    { icon: "avo", route: ["/home", "/"], tooltip: "Home" },
     { icon: "duck", route: ["/projects"], tooltip: "Projects" },
     { icon: "paper-plane", route: ["/contact"], tooltip: "Contact Me" },
   ];
@@ -43,7 +43,7 @@
                 color="burn-orange"
                 direction="top"
                 to={nav.route[0]}
-                active={currentLocation === nav.route[0]}
+                active={nav.route.includes(currentLocation)}
                 title={`${nav.tooltip} button`}
               />
             {/each}
