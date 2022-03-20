@@ -1,4 +1,5 @@
 <script>
+	import { fly } from "svelte/transition";
 	import Gear from "nano-grid-svelte/components/Gear.svelte";
 	import Container from "nano-grid-svelte/components/Container.svelte";
 	import Icon from "nano-grid-svelte/components/Icon.svelte";
@@ -15,12 +16,10 @@
 			contentIndex += movement;
 		}
 	};
-
-	
 </script>
 
 <template>
-	<section class="home">
+	<section class="home" transition:fly={{ y: -500, duration: 400, opacity: 1 }}>
 		<div class="monitor">
 			<Container>
 				<h1>{@html contentDB[contentIndex].header}</h1>

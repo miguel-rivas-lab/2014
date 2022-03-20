@@ -7,6 +7,8 @@
 	import Row from "nano-grid-svelte/components/Row.svelte";
 	import Column from "nano-grid-svelte/components/Column.svelte";
 	import Store from "./modules/Store";
+	import { location } from "svelte-spa-router";
+	import { beforeUpdate } from "svelte";
 
 	let routes = {
 		"/home": Home,
@@ -31,10 +33,20 @@
 	} else if (currentHour >= 18 && currentHour <= 20) {
 		$Store.theme = "dragon-night";
 	}
+
+	let computedClasses;
+	
+	beforeUpdate(() => {
+		let currentLocation = `section-${$location.substring(1)}`;
+		computedClasses = ["svelte-theme", $Store.theme, currentLocation]
+			.join(" ")
+			.replace(/\s+/g, " ")
+			.trim();
+	});
 </script>
 
 <template>
-	<main class="svelte-theme {$Store.theme}">
+	<main class={computedClasses}>
 		<Row className="nano-app">
 			<Navigation />
 			<Column size="100%-50" className="workarea">
@@ -43,6 +55,7 @@
 				<footer>
 					<div class="clouds" />
 					<div class="city" />
+					<div class="mountains" />
 				</footer>
 			</Column>
 		</Row>
