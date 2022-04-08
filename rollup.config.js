@@ -25,7 +25,9 @@ function serve() {
 
 			process.on('SIGTERM', toExit);
 			process.on('exit', toExit);
-		}
+		},
+		host: 'mr',
+		port: 8014,
 	};
 }
 
