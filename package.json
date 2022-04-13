@@ -12,7 +12,6 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "nano-grid": "file:../../app_web_module_nanogrid",
-    "nano-grid-svelte": "file:../../app_web_module_nanogrid-svelte",
     "pug": "^3.0.2",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",

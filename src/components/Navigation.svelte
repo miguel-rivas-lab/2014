@@ -1,9 +1,5 @@
 <script>
-  import Row from "nano-grid-svelte/components/Row.svelte";
-  import Column from "nano-grid-svelte/components/Column.svelte";
-  import Btn from "nano-grid-svelte/components/Btn.svelte";
-  import Container from "nano-grid-svelte/components/Container.svelte";
-  import ScrollArea from "nano-grid-svelte/components/ScrollArea.svelte";
+  import Btn from "../components/Btn.svelte";
   import { location } from "svelte-spa-router";
   import Store from "../modules/Store";
 
@@ -30,18 +26,17 @@
 </script>
 
 <template>
-  <Column size="50" className="main-panel">
-    <ScrollArea color="burn-orange">
-      <Container>
-        <Row vertical={true}>
-          <Column>
+  <nn-column size="50" className="main-panel">
+    <nn-scroll-area color="burn-orange">
+      <nn-container>
+        <nn-row vertical={true}>
+          <nn-column>
             {#each navigation as nav}
               <Btn
                 glyph={nav.icon}
                 size="md"
                 mode="transparent"
                 color="burn-orange"
-                direction="top"
                 to={nav.route[0]}
                 active={nav.route.includes(currentLocation)}
                 title={`${nav.tooltip} button`}
@@ -55,14 +50,13 @@
                 on:click={() => setSkin(skin.evento)}
                 mode="transparent"
                 color="gold-tips"
-                direction="top"
                 active={$Store.theme === skin.evento}
                 title={`${skin.tooltip} button`}
               />
             {/each}
-          </Column>
-        </Row>
-      </Container>
-    </ScrollArea>
-  </Column>
+          </nn-column>
+        </nn-row>
+      </nn-container>
+    </nn-scroll-area>
+  </nn-column>
 </template>

@@ -11,8 +11,15 @@ export function sortByDate(a, b) {
 function uncompressProjectsDBtoJSON(db) {
   const result = {};
   db.forEach(entry => {
+
     const disabled = entry.disabled ? true : false;
     const children = entry.children || [];
+
+    const tools = entry.tools;
+
+    const clients = entry.clients;
+
+    const types = entry.types;
 
     let links = [];
     if (entry.links?.length > 0) {
@@ -32,27 +39,21 @@ function uncompressProjectsDBtoJSON(db) {
 
     const project = {
       "title": entry.title,
-      "clients": entry.clients,
+      "clients": clients,
       "date": entry.date,
       "turingDate": helpers.turingDate(entry.date),
-      "types": entry.types,
+      "types": types,
       "links": links,
       "disabled": disabled,
-      "tools": entry.tools,
+      "tools": tools,
       "children": children,
       "group": false,
       "location": false,
-      "image": "",
+      "image": entry.image,
     };
-   
-    const id = helpers.getNewID(project.clients[0], project.date);
 
-    try {
-      project.image = `https://miguel-rivas.github.io/zapp/img/preview-wide/${id}.jpg`;
-    }
-    catch {
-      project.image = require(`@/img/miguelrivas.jpg`);
-    }
+    const id = helpers.getNewID(project.clients[0], project.date);
+    
     result[id] = project;
   });
 

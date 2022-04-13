@@ -4,8 +4,6 @@
 	import Projects from "./views/Projects.svelte";
 	import Contact from "./views/Contact.svelte";
 	import Navigation from "./components/Navigation.svelte";
-	import Row from "nano-grid-svelte/components/Row.svelte";
-	import Column from "nano-grid-svelte/components/Column.svelte";
 	import Store from "./modules/Store";
 	import { location } from "svelte-spa-router";
 	import { beforeUpdate } from "svelte";
@@ -47,9 +45,9 @@
 
 <template>
 	<main class={computedClasses}>
-		<Row className="nano-app">
+		<nn-row class="nano-app">
 			<Navigation />
-			<Column size="100%-50" className="workarea">
+			<nn-column size="100%-50" class="workarea">
 				<Router {routes} />
 				<div class="bk-ornament" />
 				<footer>
@@ -57,7 +55,7 @@
 					<div class="city" />
 					<div class="mountains" />
 				</footer>
-			</Column>
-		</Row>
+			</nn-column>
+		</nn-row>
 	</main>
 </template>

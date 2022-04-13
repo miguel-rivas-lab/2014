@@ -1,8 +1,6 @@
 <script>
 	import { fly } from "svelte/transition";
-	import Gear from "nano-grid-svelte/components/Gear.svelte";
-	import Container from "nano-grid-svelte/components/Container.svelte";
-	import Icon from "nano-grid-svelte/components/Icon.svelte";
+	import Gear from "../components/Gear.svelte";
 	import { contentDB } from "../db/content";
 
 	let contentIndex = 0;
@@ -21,7 +19,7 @@
 <template>
 	<section class="home" transition:fly={{ y: -500, duration: 400, opacity: 1 }}>
 		<div class="monitor">
-			<Container>
+			<nn-container>
 				<h1>{@html contentDB[contentIndex].header}</h1>
 				{#if contentDB[contentIndex].content}
 					<p>{@html contentDB[contentIndex].content}</p>
@@ -33,7 +31,7 @@
 						movePage(-1);
 					}}
 				>
-					<Icon direction="left" glyph="chevron" />
+					<nn-icon direction="left" glyph="chevron" />
 				</button>
 				<button
 					class="scrn_btn next"
@@ -41,7 +39,7 @@
 						movePage(1);
 					}}
 				>
-					<Icon direction="right" glyph="chevron" />
+					<nn-icon direction="right" glyph="chevron" />
 				</button>
 
 				<Gear
@@ -83,7 +81,7 @@
 					width="165"
 					className="rtl g6"
 				/>
-			</Container>
+			</nn-container>
 			<div class="screen-container">
 				<div class="bone">
 					<Gear

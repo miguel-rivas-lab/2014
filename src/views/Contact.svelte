@@ -1,6 +1,6 @@
 <script>
   import Star from "../components/Star.svelte";
-  import Btn from "nano-grid-svelte/components/Btn.svelte";
+  import Btn from "../components/Btn.svelte";
 
   let mX = 1,
     mY = 1;

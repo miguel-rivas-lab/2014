@@ -31,12 +31,12 @@
     background: var(--color-panel-background);
     border-right: 1px solid #222;
 
-    .container {
+    nn-container {
       margin: unset;
       height: 100%;
     }
 
-    .scroll-area {
+    nn-scroll-area {
       height: 100%;
     }
 
@@ -60,7 +60,7 @@
     background: var(--color-panel-details-background);
     border-right: 1px solid var(--color-panel-border-separator);
 
-    .scroll-area {
+    nn-scroll-area {
       padding-top: 1rem;
       padding-bottom: 1rem;
       overflow-x: hidden;

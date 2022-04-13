@@ -1,22 +1,18 @@
 <script>
-	import ScrollArea from "nano-grid-svelte/components/ScrollArea.svelte";
-	import Row from "nano-grid-svelte/components/Row.svelte";
-	import Column from "nano-grid-svelte/components/Column.svelte";
-	import Container from "nano-grid-svelte/components/Container.svelte";
 	import { allDBListVisible } from "../modules/format-db";
 </script>
 
 <template>
 	<section class="projects">
-		<ScrollArea color="burn-orange">
-			<Container width="1450" className="gallery">
+		<nn-scroll-area color="burn-orange">
+			<nn-container width="1450" class="gallery">
 				{#each allDBListVisible as entry}
 					<article class="nano-box">
-						<Row spacing="4" breakpoint="lg">
-							<Column size="3/5">
+						<nn-row spacing="4" breakpoint="lg">
+							<nn-column size="3/5">
 								<img src={entry.image} alt={entry.header + " preview"} />
-							</Column>
-							<Column size="2/5">
+							</nn-column>
+							<nn-column size="2/5">
 								<h2>
 									{@html entry.clients[0]}
 								</h2>
@@ -38,11 +34,11 @@
 										{/each}
 									</ul>
 								{/if}
-							</Column>
-						</Row>
+							</nn-column>
+						</nn-row>
 					</article>
 				{/each}
-			</Container>
-		</ScrollArea>
+			</nn-container>
+		</nn-scroll-area>
 	</section>
 </template>
